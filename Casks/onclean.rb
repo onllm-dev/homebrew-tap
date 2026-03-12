@@ -1,6 +1,6 @@
 cask "onclean" do
-  version "1.0.19"
-  sha256 "e362932db07ec9237575f076720ddf0fa084a7508a1094dbac5ece474c946f60"
+  version "1.0.20"
+  sha256 "acd37c89ce33b5d98c08641713be94db2e7a66a031023b9b9db07108f7696ec4"
 
   url "https://onclean.onllm.dev/releases/onClean_#{version}_aarch64.dmg"
   name "onClean"
