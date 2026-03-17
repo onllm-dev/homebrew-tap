@@ -7,20 +7,20 @@ class Onwatch < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.28/onwatch-darwin-arm64"
-      sha256 "f4f0ac9453289948512d633693515138ccbf9fb96484f75b165639405a3bbd20"
+      sha256 "f1ecef035fdf247de53a310d532f5f11dccee8423c36955f0ca7d7bd99a49ed6"
     else
       url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.28/onwatch-darwin-amd64"
-      sha256 "e725cf00545733b284d538e94630b7eec9ad89982db781721a899f8b26a44c7e"
+      sha256 "0e690df784b2857c07de6a5a93546a96e815bad04b2268f1af401f87ed4ff2f9"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.28/onwatch-linux-arm64"
-      sha256 "7b535b8a805cf9801393828bb06311f790bdf7f200354e96929b708da8502285"
+      sha256 "d7b2020399ac9fd6479123d3bd39312f87e6294bb464107cdd6e3fc6ef6c6b9d"
     else
       url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.28/onwatch-linux-amd64"
-      sha256 "cb4a502d93fa0dc53359ff62a0f51a60d26e873373e231f305fdb4ce78f10df0"
+      sha256 "e3b824320ab208054e159b2a75db6c2e1876b4f3f69133494b5f53d953107486"
     end
   end
 
