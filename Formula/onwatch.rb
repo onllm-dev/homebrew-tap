@@ -1,26 +1,26 @@
 class Onwatch < Formula
   desc "CLI tool for tracking AI API quotas across multiple providers"
   homepage "https://github.com/onllm-dev/onwatch"
-  version "2.11.30"
+  version "2.11.32"
   license "GPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.30/onwatch-darwin-arm64"
-      sha256 "539afb4ae7c5523f79962db0924d295e4a2adccc95f1c557c71ab2e956de3a24"
+      url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.32/onwatch-darwin-arm64"
+      sha256 "3f8435540f9cf06977e0bd118d373028d24900fdb1c999893245a8d6971cd8cf"
     else
-      url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.30/onwatch-darwin-amd64"
-      sha256 "c65c61ff0e89dda408eb4c0e70f1fb13b620d43fdb4f0accf524e567d1cdd492"
+      url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.32/onwatch-darwin-amd64"
+      sha256 "6590ba46f6371e83c157e29b12c0170d711ebb0c7262271528f5aadee9626898"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.30/onwatch-linux-arm64"
-      sha256 "7f81651cb4fb1d18d7132308fd2686bc424a2af46d03fc12617cb3123c8e63f5"
+      url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.32/onwatch-linux-arm64"
+      sha256 "d1e2fbaf8513a8c06a9caeb5a9731a1fb0d0118f87a81cd90aee0e9101cd1bb2"
     else
-      url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.30/onwatch-linux-amd64"
-      sha256 "8a8fbfbdcb4fcebab00f22fd1e94f39ba81fd6be77a6227f0205012ea3626702"
+      url "https://github.com/onllm-dev/onwatch/releases/download/v2.11.32/onwatch-linux-amd64"
+      sha256 "6c76009d2563afe75f316e291c656ff423f235aab9a4eece7b1101696ff602b7"
     end
   end
 
