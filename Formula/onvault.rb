@@ -12,7 +12,6 @@ class Onvault < Formula
   end
 
   depends_on :macos
-  depends_on "macfuse" => :cask
 
   def install
     bin.install "onvault"
