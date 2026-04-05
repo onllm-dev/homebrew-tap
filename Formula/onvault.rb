@@ -7,8 +7,7 @@ class Onvault < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/onllm-dev/onvault/releases/download/v0.1.0/onvault-0.1.0-macos-arm64.tar.gz"
-      # sha256 will be updated after first release build
-      sha256 "PLACEHOLDER"
+      sha256 "5f49ba829a13fff00f319468e2b0687b45ee680049904ab70f92c2619eadb939"
     end
   end
 
@@ -23,7 +22,6 @@ class Onvault < Formula
   end
 
   def post_install
-    # Create LaunchAgents symlink for the current user
     launch_agents = Pathname.new("#{Dir.home}/Library/LaunchAgents")
     launch_agents.mkpath
     plist_dst = launch_agents/"com.onvault.daemon.plist"
@@ -34,26 +32,18 @@ class Onvault < Formula
 
   def caveats
     <<~EOS
-      onvault requires macFUSE to be installed and approved:
+      onvault requires macFUSE:
 
         brew install --cask macfuse
-        # Then: System Settings → Privacy & Security → Approve the extension
+        # System Settings → Privacy & Security → Approve
         # Reboot required after first install
 
       Get started:
 
-        onvault init               # First-time setup (sets passphrase, shows recovery key)
-        onvault start              # Start daemon (menu bar icon + web UI)
-        onvault unlock             # Authenticate and mount vaults
-        onvault vault add ~/.ssh --smart   # Encrypt and protect ~/.ssh
-
-      The recovery key is shown ONLY during `onvault init` — save it securely.
-
-      A LaunchAgent plist has been installed to:
-        ~/Library/LaunchAgents/com.onvault.daemon.plist
-
-      To auto-start on login:
-        launchctl load ~/Library/LaunchAgents/com.onvault.daemon.plist
+        onvault init
+        onvault start
+        onvault unlock
+        onvault vault add ~/.ssh --smart
 
       Documentation: https://github.com/onllm-dev/onvault
     EOS
