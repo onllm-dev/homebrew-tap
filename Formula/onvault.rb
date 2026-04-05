@@ -20,15 +20,6 @@ class Onvault < Formula
     (prefix/"com.onvault.daemon.plist").install "com.onvault.daemon.plist"
   end
 
-  def post_install
-    launch_agents = Pathname.new("#{Dir.home}/Library/LaunchAgents")
-    launch_agents.mkpath
-    plist_dst = launch_agents/"com.onvault.daemon.plist"
-    unless plist_dst.exist?
-      plist_dst.make_symlink(prefix/"com.onvault.daemon.plist")
-    end
-  end
-
   def caveats
     <<~EOS
       onvault requires macFUSE:
@@ -43,6 +34,11 @@ class Onvault < Formula
         onvault start
         onvault unlock
         onvault vault add ~/.ssh --smart
+
+      To auto-start on login:
+
+        cp #{prefix}/com.onvault.daemon.plist ~/Library/LaunchAgents/
+        launchctl load ~/Library/LaunchAgents/com.onvault.daemon.plist
 
       Documentation: https://github.com/onllm-dev/onvault
     EOS
